@@ -92,8 +92,8 @@ The application runs on dedicated PostgreSQL tables with Row Level Security (RLS
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/hemanthsairamjagatha/Church.git
-cd Church
+git clone https://github.com/hemanthsairamjagatha/Mizpah-Ministries.git
+cd Mizpah-Ministries
 ```
 
 ### 2. Install Dependencies
@@ -164,5 +164,4 @@ The project includes `vercel.json` configured with SPA fallback rewrites.
 
 ## 📄 License
 This project is licensed under the MIT License.
-#   M i z p a h - M i n i s t r i e s  
- 
+

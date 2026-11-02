@@ -1,0 +1,47 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.mizpahministries.org" }],
+      "destination": "https://mizpahministries.org/$1",
+      "permanent": true
+    },
+    { "source": "/about_god", "destination": "/about-god", "permanent": true },
+    { "source": "/about_god/:slug", "destination": "/about-god/:slug", "permanent": true },
+    { "source": "/donating", "destination": "/donate", "permanent": true },
+    { "source": "/giving", "destination": "/donate", "permanent": true },
+    { "source": "/privacy-policy", "destination": "/privacy", "permanent": true },
+    { "source": "/terms-and-conditions", "destination": "/terms", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/admin",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive, nosnippet" }]
+    },
+    {
+      "source": "/admin/:path*",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive, nosnippet" }]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Strict-Transport-Security", "value": "max-age=31536000" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }]
+    }
+  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}

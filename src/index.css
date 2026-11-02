@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #0f172a;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Site-wide Inter font guarantee */
+*, *::before, *::after {
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, button, [role="button"], label, input, textarea, select, li, blockquote, .font-serif, .font-sans, .font-inter {
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Invisible scrollbar utility & Sidebar Scrollbar Removal */
+.no-scrollbar::-webkit-scrollbar,
+.no-scrollbar *::-webkit-scrollbar,
+.scrollbar-none::-webkit-scrollbar,
+.scrollbar-none *::-webkit-scrollbar,
+aside::-webkit-scrollbar,
+aside *::-webkit-scrollbar {
+  display: none !important;
+  width: 0px !important;
+  height: 0px !important;
+  background: transparent !important;
+}
+
+.no-scrollbar::-webkit-scrollbar-thumb,
+.no-scrollbar *::-webkit-scrollbar-thumb,
+.scrollbar-none::-webkit-scrollbar-thumb,
+.scrollbar-none *::-webkit-scrollbar-thumb,
+aside::-webkit-scrollbar-thumb,
+aside *::-webkit-scrollbar-thumb {
+  display: none !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.no-scrollbar::-webkit-scrollbar-track,
+.no-scrollbar *::-webkit-scrollbar-track,
+.scrollbar-none::-webkit-scrollbar-track,
+.scrollbar-none *::-webkit-scrollbar-track,
+aside::-webkit-scrollbar-track,
+aside *::-webkit-scrollbar-track {
+  display: none !important;
+  background: transparent !important;
+}
+
+.no-scrollbar,
+.scrollbar-none,
+aside,
+aside * {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* Pastor name heading: 29.6px on mobile responsive (<640px), 32.8px on desktop responsive (>=640px) */
+.pastor-heading-responsive {
+  font-size: 29.6px;
+}
+
+@media (min-width: 640px) {
+  .pastor-heading-responsive {
+    font-size: 32.8px;
+  }
+}
+
+/* Pastor quote body-copy: 0 margin on mobile responsive (<640px), 32px (mb-8) preserved on desktop */
+@media (max-width: 639px) {
+  .body-copy {
+    margin: 0 !important;
+  }
+}
+
+/* Hero CTA Buttons responsive margin & padding: 
+   Mobile: primary has margin 0, secondary has margin 8px 0 0 (!mt-2); both have padding 11.2px 32px.
+   Desktop: primary has margin 0 16px 0 0, secondary has margin 0 (sm:!mt-0); untouched. */
+.hero-btn-primary {
+  padding: 11.2px 32px !important;
+  margin: 0px !important;
+}
+
+@media (min-width: 640px) {
+  .hero-btn-primary {
+    margin: 0px 16px 0px 0px !important;
+  }
+}
+
+.hero-btn-secondary {
+  padding: 11.2px 32px !important;
+  margin: 8px 0px 0px !important;
+}
+
+@media (min-width: 640px) {
+  .hero-btn-secondary {
+    margin: 0px !important;
+  }
+}
+
+/* Pastor leadership content container: remove padding on mobile responsive (<640px), untouched on desktop */
+@media (max-width: 639px) {
+  .pastor-content-container {
+    padding: 0 !important;
+  }
+}
+
+/* Hero description paragraph: 15px on mobile responsive (<640px), 35px on desktop (>=640px) untouched */
+.hero-description-responsive {
+  font-size: 15px !important;
+}
+
+@media (min-width: 640px) {
+  .hero-description-responsive {
+    font-size: 35px !important;
+  }
+}
+
+/* Founder portrait image: 
+   Mobile (<640px): Full-bleed edge-to-edge from screen start (0px) to screen end (100vw).
+   Desktop (>=640px): width 630px, height 729px (desktop responsive untouched) */
+@media (max-width: 639px) {
+  .founder-portrait-col {
+    margin-left: -1rem !important;
+    margin-right: -1rem !important;
+    width: calc(100% + 2rem) !important;
+    max-width: none !important;
+  }
+  .founder-image-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .founder-image {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: cover !important;
+    object-position: top !important;
+    border-radius: 0 !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .founder-portrait-col {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 50% !important;
+  }
+  .founder-image-container {
+    width: 100% !important;
+    max-width: 630px !important;
+    height: auto !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+  }
+  .founder-image {
+    width: 630px !important;
+    height: 729px !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Donating section subtext:
+   Mobile (<640px): height auto, line-height 1.5, margin 20px 0px, font-size 20px (prevents overlap)
+   Desktop (>=640px): 1100x30, line-height 30px, margin 20px 0px, font-size 20px (desktop untouched) */
+.donate-subtext {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  line-height: 1.5 !important;
+  font-size: 20px !important;
+  margin: 20px 0px !important;
+}
+
+@media (min-width: 640px) {
+  .donate-subtext {
+    width: 1100px !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    font-size: 20px !important;
+    margin: 20px 0px !important;
+  }
+}
+
+/* Donate button responsive padding: 15px on mobile (<640px), 17.5px 25px on desktop (>=640px) */
+.donate-button {
+  padding: 15px !important;
+}
+
+@media (min-width: 640px) {
+  .donate-button {
+    padding: 17.5px 25px !important;
+  }
+}

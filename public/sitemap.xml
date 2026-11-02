@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home Sanctuary -->
+  <url>
+    <loc>https://mizpahministries.org/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- Sermons Archive -->
+  <url>
+    <loc>https://mizpahministries.org/sermons</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- About God Core Beliefs -->
+  <url>
+    <loc>https://mizpahministries.org/about-god</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- God the Father -->
+  <url>
+    <loc>https://mizpahministries.org/about-god/god-the-father</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Jesus Christ -->
+  <url>
+    <loc>https://mizpahministries.org/about-god/jesus-christ-the-son-of-god</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- The Holy Spirit -->
+  <url>
+    <loc>https://mizpahministries.org/about-god/the-holy-spirit</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Pastoral Founder Biography -->
+  <url>
+    <loc>https://mizpahministries.org/founder</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Photo Gallery -->
+  <url>
+    <loc>https://mizpahministries.org/gallery</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Online Giving & Stewardship -->
+  <url>
+    <loc>https://mizpahministries.org/donate</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Contact Us & Prayer Requests -->
+  <url>
+    <loc>https://mizpahministries.org/contact</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://mizpahministries.org/privacy</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Terms & Conditions -->
+  <url>
+    <loc>https://mizpahministries.org/terms</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+</urlset>
