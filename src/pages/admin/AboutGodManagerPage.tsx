@@ -360,11 +360,11 @@ export const AboutGodManagerPage: React.FC = () => {
       >
         {viewingCard && (
           <div className="space-y-4">
-            <div className="h-56 w-full rounded-xl overflow-hidden bg-slate-100">
+            <div className="max-h-72 w-full rounded-xl overflow-hidden bg-slate-950 flex items-center justify-center">
               <img
                 src={resolveImageUrl(viewingCard.image_path)}
                 alt={viewingCard.title}
-                className="w-full h-full object-cover"
+                className="w-full h-auto max-h-72 object-contain"
               />
             </div>
             <p className="text-sm italic font-medium text-sky-600">

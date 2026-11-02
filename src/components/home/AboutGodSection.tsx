@@ -76,7 +76,7 @@ export const AboutGodSection: React.FC<AboutGodSectionProps> = ({
                         src={resolveImageUrl(card.image_path)}
                         alt={card.title}
                         loading="lazy"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>

@@ -7,8 +7,9 @@ import { siteSettingsService } from '../../services/siteSettingsService';
 import { aboutGodService } from '../../services/aboutGodService';
 import { resolveImageUrl, slugify } from '../../lib/utils';
 import type { SiteSettings, AboutGodCard } from '../../types/database.types';
-import { ArrowLeft, BookOpen, Share2, MessageCircle } from 'lucide-react';
+import { ArrowLeft, BookOpen, Share2, MessageCircle, Maximize2 } from 'lucide-react';
 import { Button } from '../../components/common/Button';
+import { Lightbox } from '../../components/common/Lightbox';
 import { toast } from 'sonner';
 
 export const AboutGodDetailPage: React.FC = () => {
@@ -19,6 +20,7 @@ export const AboutGodDetailPage: React.FC = () => {
   const [currentCard, setCurrentCard] = useState<AboutGodCard | null>(null);
   const [allCards, setAllCards] = useState<AboutGodCard[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
@@ -168,13 +170,21 @@ export const AboutGodDetailPage: React.FC = () => {
               )}
             </header>
 
-            {/* Main Featured Image */}
-            <div className="relative w-full h-[320px] sm:h-[450px] lg:h-[520px] rounded-2xl overflow-hidden bg-slate-900 shadow-card border border-slate-100 mb-10">
+            {/* Main Featured Image - Displayed in full aspect ratio without cropping */}
+            <div
+              onClick={() => setIsLightboxOpen(true)}
+              className="relative w-full rounded-2xl overflow-hidden bg-slate-950 shadow-card border border-slate-200/80 mb-10 flex items-center justify-center cursor-pointer group"
+              title="Click to view full image in lightbox"
+            >
               <img
                 src={resolveImageUrl(currentCard.image_path)}
                 alt={currentCard.title}
-                className="w-full h-full object-cover"
+                className="w-full h-auto max-h-[85vh] object-contain rounded-2xl block transition-transform duration-300 group-hover:scale-[1.005]"
               />
+              <div className="absolute bottom-4 right-4 bg-navy-950/75 hover:bg-navy-950 text-white text-xs font-medium px-3 py-1.5 rounded-full backdrop-blur-xs flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-sm">
+                <Maximize2 className="w-3.5 h-3.5" />
+                <span>Full Image</span>
+              </div>
             </div>
 
             {/* Content & Sidebar Grid */}
@@ -232,6 +242,23 @@ export const AboutGodDetailPage: React.FC = () => {
               </aside>
             </div>
           </div>
+        )}
+
+        {/* Full Image Lightbox */}
+        {currentCard && (
+          <Lightbox
+            isOpen={isLightboxOpen}
+            onClose={() => setIsLightboxOpen(false)}
+            images={[
+              {
+                url: resolveImageUrl(currentCard.image_path),
+                title: currentCard.title,
+                altText: currentCard.title,
+              },
+            ]}
+            currentIndex={0}
+            onNavigate={() => {}}
+          />
         )}
       </main>
 
