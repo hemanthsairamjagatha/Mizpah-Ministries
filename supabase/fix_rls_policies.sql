@@ -2,7 +2,7 @@
 -- CHURCH PORTAL: BULLETPROOF RLS REPAIR SCRIPT
 -- ============================================================================
 -- Run this in your Supabase Dashboard SQL Editor:
--- https://supabase.com/dashboard/project/rwyqybnlksnrkappnspo/sql
+-- https://supabase.com/dashboard/project/<your-project-ref>/sql
 -- ============================================================================
 
 SET session characteristics AS TRANSACTION READ WRITE;

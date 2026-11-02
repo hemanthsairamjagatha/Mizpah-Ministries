@@ -104,8 +104,8 @@ npm install
 ### 3. Environment Configuration
 Create a `.env` file in the project root (see `.env.example`):
 ```env
-VITE_SUPABASE_URL=https://ulxlpwipdvejzdzhmhwb.supabase.co
-VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVseGxwd2lwZHZlanpkemhtaHdiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI5NDI1NTQsImV4cCI6MjEwODUxODU1NH0.rKWX5kFwxom9mxCR7NQlP2M6MJRtQveEb8UQMmZ86L0
+VITE_SUPABASE_URL=https://your-project-ref.supabase.co
+VITE_SUPABASE_ANON_KEY=your-supabase-anon-key-here
 ```
 
 ### 4. Database Setup & Seed Execution
@@ -134,9 +134,9 @@ npm run preview
 To access the church administration portal:
 1. Navigate to `/admin` or click the **Admin** button in the public website header.
 2. If not logged in, you will be directed to `/admin/login`.
-3. Default administrator credentials:
-   - **Email:** `admin@mizpahministries.org`
-   - **Password:** `admin123456`
+3. Administrator credentials:
+   - **Email:** `your-admin@example.com`
+   - **Password:** `your-configured-password`
 
 To create additional administrators:
 - In your Supabase dashboard, navigate to **Authentication** > **Users** > **Invite User** or **Add User**.

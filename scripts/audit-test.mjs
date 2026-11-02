@@ -1,8 +1,8 @@
 // test-supabase-integration.mjs
 import { createClient } from '@supabase/supabase-js';
 
-const SUPABASE_URL = 'https://ulxlpwipdvejzdzhmhwb.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVseGxwd2lwZHZlanpkemhtaHdiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI5NDI1NTQsImV4cCI6MjEwODUxODU1NH0.rKWX5kFwxom9mxCR7NQlP2M6MJRtQveEb8UQMmZ86L0';
+const SUPABASE_URL = process.env.VITE_SUPABASE_URL || process.env.SUPABASE_URL || 'https://your-project-ref.supabase.co';
+const SUPABASE_ANON_KEY = process.env.VITE_SUPABASE_ANON_KEY || process.env.SUPABASE_ANON_KEY || 'your-anon-key-placeholder';
 
 console.log('=== STARTING SUPABASE INTEGRATION & RLS SECURITY AUDIT ===\n');
 
@@ -95,8 +95,8 @@ async function runAudit() {
   console.log('\n--- 4. Testing Admin Authentication ---');
   const adminClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
   const { data: authData, error: authErr } = await adminClient.auth.signInWithPassword({
-    email: 'admin@mizpahministries.org',
-    password: 'admin123456'
+    email: process.env.ADMIN_EMAIL || 'admin@mizpahministries.org',
+    password: process.env.ADMIN_PASSWORD || 'your-admin-password'
   });
   assert(!authErr && authData.session && authData.user, 'Admin authentication with GoTrue', authErr?.message);
 
