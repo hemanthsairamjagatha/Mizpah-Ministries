@@ -7,7 +7,7 @@ import { siteSettingsService } from '../../services/siteSettingsService';
 import { aboutGodService } from '../../services/aboutGodService';
 import { resolveImageUrl, slugify } from '../../lib/utils';
 import type { SiteSettings, AboutGodCard } from '../../types/database.types';
-import { ArrowLeft, BookOpen, Share2, MessageCircle, Maximize2 } from 'lucide-react';
+import { ArrowLeft, BookOpen, Share2, MessageCircle, Maximize2, ZoomIn, ZoomOut, RotateCcw } from 'lucide-react';
 import { Button } from '../../components/common/Button';
 import { Lightbox } from '../../components/common/Lightbox';
 import { toast } from 'sonner';
@@ -21,6 +21,7 @@ export const AboutGodDetailPage: React.FC = () => {
   const [allCards, setAllCards] = useState<AboutGodCard[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [imageScale, setImageScale] = useState<number>(100);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
@@ -170,20 +171,94 @@ export const AboutGodDetailPage: React.FC = () => {
               )}
             </header>
 
-            {/* Main Featured Image - Displayed in full aspect ratio without cropping */}
-            <div
-              onClick={() => setIsLightboxOpen(true)}
-              className="relative w-full rounded-2xl overflow-hidden bg-slate-950 shadow-card border border-slate-200/80 mb-10 flex items-center justify-center cursor-pointer group"
-              title="Click to view full image in lightbox"
-            >
-              <img
-                src={resolveImageUrl(currentCard.image_path)}
-                alt={currentCard.title}
-                className="w-full h-auto max-h-[85vh] object-contain rounded-2xl block transition-transform duration-300 group-hover:scale-[1.005]"
-              />
-              <div className="absolute bottom-4 right-4 bg-navy-950/75 hover:bg-navy-950 text-white text-xs font-medium px-3 py-1.5 rounded-full backdrop-blur-xs flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-sm">
-                <Maximize2 className="w-3.5 h-3.5" />
-                <span>Full Image</span>
+            {/* Main Featured Image - Zero side bars, edge-to-edge full width with interactive size adjustment */}
+            <div className="relative w-full mb-10 transition-all duration-300">
+              {/* Image Controls Toolbar */}
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+                <span className="text-xs font-semibold uppercase tracking-wider text-navy-500">
+                  Featured Artwork
+                </span>
+
+                <div className="flex items-center gap-1.5 bg-slate-50 px-2.5 py-1.5 rounded-full border border-slate-200/90 shadow-xs">
+                  <span className="text-xs font-medium text-navy-600 px-1">
+                    Size: {imageScale}%
+                  </span>
+
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setImageScale((prev) => Math.max(75, prev - 25));
+                    }}
+                    disabled={imageScale <= 75}
+                    title="Decrease image size"
+                    className="p-1 rounded-md text-navy-700 hover:text-navy-950 hover:bg-slate-200/70 disabled:opacity-35 disabled:cursor-not-allowed transition"
+                  >
+                    <ZoomOut className="w-3.5 h-3.5" />
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setImageScale((prev) => Math.min(200, prev + 25));
+                    }}
+                    disabled={imageScale >= 200}
+                    title="Increase image size"
+                    className="p-1 rounded-md text-navy-700 hover:text-navy-950 hover:bg-slate-200/70 disabled:opacity-35 disabled:cursor-not-allowed transition"
+                  >
+                    <ZoomIn className="w-3.5 h-3.5" />
+                  </button>
+
+                  {imageScale !== 100 && (
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setImageScale(100);
+                      }}
+                      title="Reset size to 100%"
+                      className="p-1 rounded-md text-navy-700 hover:text-navy-950 hover:bg-slate-200/70 transition"
+                    >
+                      <RotateCcw className="w-3.5 h-3.5" />
+                    </button>
+                  )}
+
+                  <div className="w-[1px] h-3.5 bg-slate-200 mx-0.5" />
+
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setIsLightboxOpen(true);
+                    }}
+                    title="View fullscreen in lightbox"
+                    className="inline-flex items-center gap-1 text-xs font-medium text-sky-600 hover:text-sky-700 p-1 rounded-md hover:bg-sky-50 transition"
+                  >
+                    <Maximize2 className="w-3.5 h-3.5" />
+                    <span className="hidden sm:inline">Fullscreen</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Image Frame - Zero dark side space, fills full width naturally */}
+              <div
+                className={`relative w-full rounded-2xl overflow-hidden shadow-card border border-slate-200/80 bg-white transition-all duration-300 ${
+                  imageScale > 100 ? 'overflow-x-auto cursor-grab active:cursor-grabbing' : ''
+                }`}
+              >
+                <img
+                  src={resolveImageUrl(currentCard.image_path)}
+                  alt={currentCard.title}
+                  onClick={() => setIsLightboxOpen(true)}
+                  style={{
+                    width: `${imageScale}%`,
+                    maxWidth: imageScale === 100 ? '100%' : 'none',
+                    margin: '0 auto',
+                  }}
+                  className="h-auto block rounded-2xl transition-all duration-300 cursor-pointer hover:opacity-95"
+                  title="Click to view full image in fullscreen lightbox"
+                />
               </div>
             </div>
 
