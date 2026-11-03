@@ -146,7 +146,7 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
                   style={{ color: '#FFFFFF', fontFamily: "'Inter', sans-serif" }}
                   className="font-inter text-white hover:text-sky-400 transition-colors"
                 >
-                  Our Pastor
+                  Pastor
                 </Link>
               </li>
               <li>
