@@ -60,7 +60,8 @@ export const AboutGodManagerPage: React.FC = () => {
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!scripture.trim()) {
+    const cleanScripture = scripture.replace(/^Text\s*:\s*/i, '').trim();
+    if (!cleanScripture) {
       toast.error('Card text is required');
       return;
     }
@@ -71,7 +72,7 @@ export const AboutGodManagerPage: React.FC = () => {
         await aboutGodService.updateGospelText(editingCard.id, {
           heading: 'The Gospel',
           label: 'Text :',
-          scripture: scripture.trim(),
+          scripture: cleanScripture,
           priority: Number(priority) || 1,
           is_published: isPublished,
         });
@@ -80,7 +81,7 @@ export const AboutGodManagerPage: React.FC = () => {
         await aboutGodService.createGospelText({
           heading: 'The Gospel',
           label: 'Text :',
-          scripture: scripture.trim(),
+          scripture: cleanScripture,
           priority: Number(priority) || 1,
           is_published: isPublished,
         });

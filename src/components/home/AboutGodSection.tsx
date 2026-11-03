@@ -33,7 +33,7 @@ export const AboutGodSection: React.FC<AboutGodSectionProps> = ({ isLoading }) =
         style={{ margin: '0px' }}
         className="w-full px-4 sm:px-6 lg:px-8 !m-0"
       >
-        {/* Section Header - Fixed The Gospel & Text : */}
+        {/* Section Header - Fixed The Gospel */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <h2
             style={{ fontFamily: "'Inter', sans-serif" }}
@@ -41,9 +41,10 @@ export const AboutGodSection: React.FC<AboutGodSectionProps> = ({ isLoading }) =
           >
             The Gospel
           </h2>
+
           <p
-            style={{ fontFamily: "'Inter', sans-serif", fontSize: '16px' }}
-            className="font-inter text-[16px] font-semibold text-slate-800"
+            style={{ fontFamily: "'Inter', sans-serif" }}
+            className="font-inter text-base sm:text-lg font-bold text-slate-900 tracking-wide"
           >
             Text :
           </p>
@@ -55,22 +56,28 @@ export const AboutGodSection: React.FC<AboutGodSectionProps> = ({ isLoading }) =
                 <div className="h-16 bg-slate-200 rounded-lg w-3/4 mx-auto" />
               </div>
             ) : (
-              gospelTexts.map((gt) => (
-                <div key={gt.id} className="max-w-2xl mx-auto">
-                  {gt.scripture && (
-                    <p
-                      style={{
-                        fontFamily: "'Inter', sans-serif",
-                        fontSize: '16px',
-                        fontStyle: 'normal',
-                      }}
-                      className="font-inter text-[16px] font-semibold text-slate-800 leading-relaxed not-italic"
-                    >
-                      {gt.scripture}
-                    </p>
-                  )}
-                </div>
-              ))
+              gospelTexts.map((gt) => {
+                const cleanScripture = (gt.scripture || '')
+                  .replace(/^Text\s*:\s*/i, '')
+                  .trim();
+
+                return (
+                  <div key={gt.id} className="max-w-2xl mx-auto">
+                    {cleanScripture && (
+                      <p
+                        style={{
+                          fontFamily: "'Inter', sans-serif",
+                          fontSize: '16px',
+                          fontStyle: 'normal',
+                        }}
+                        className="font-inter text-[16px] font-semibold text-slate-800 leading-relaxed not-italic"
+                      >
+                        {cleanScripture}
+                      </p>
+                    )}
+                  </div>
+                );
+              })
             )}
           </div>
         </div>

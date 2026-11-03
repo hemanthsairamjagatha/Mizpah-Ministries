@@ -13,6 +13,8 @@
     { "source": "/about_god", "destination": "/the-gospel", "permanent": true },
     { "source": "/about-god/:slug", "destination": "/the-gospel/:slug", "permanent": true },
     { "source": "/about_god/:slug", "destination": "/the-gospel/:slug", "permanent": true },
+    { "source": "/vision", "destination": "/our-vision", "permanent": true },
+    { "source": "/our_vision", "destination": "/our-vision", "permanent": true },
     { "source": "/donating", "destination": "/donate", "permanent": true },
     { "source": "/giving", "destination": "/donate", "permanent": true },
     { "source": "/privacy-policy", "destination": "/privacy", "permanent": true },

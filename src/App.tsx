@@ -8,6 +8,7 @@ import { HomePage } from './pages/public/HomePage';
 import { SermonsPage } from './pages/public/SermonsPage';
 import { AboutGodPage } from './pages/public/AboutGodPage';
 import { AboutGodDetailPage } from './pages/public/AboutGodDetailPage';
+import { OurVisionPage } from './pages/public/OurVisionPage';
 import { FounderPage } from './pages/public/FounderPage';
 import { GalleryPage } from './pages/public/GalleryPage';
 import { ContactPage } from './pages/public/ContactPage';
@@ -88,6 +89,9 @@ export const App: React.FC = () => {
         <Route path="/about_god/:slug" element={<Navigate to="/the-gospel/:slug" replace />} />
         <Route path="/about%20god" element={<Navigate to="/the-gospel" replace />} />
         <Route path="/about god" element={<Navigate to="/the-gospel" replace />} />
+        <Route path="/our-vision" element={<OurVisionPage />} />
+        <Route path="/our_vision" element={<Navigate to="/our-vision" replace />} />
+        <Route path="/vision" element={<Navigate to="/our-vision" replace />} />
         <Route path="/founder" element={<FounderPage />} />
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/contact" element={<ContactPage />} />

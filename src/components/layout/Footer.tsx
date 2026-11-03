@@ -133,6 +133,15 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
               </li>
               <li>
                 <Link
+                  to="/our-vision"
+                  style={{ color: '#FFFFFF', fontFamily: "'Inter', sans-serif" }}
+                  className="font-inter text-white hover:text-sky-400 transition-colors"
+                >
+                  Our Vision
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/founder"
                   style={{ color: '#FFFFFF', fontFamily: "'Inter', sans-serif" }}
                   className="font-inter text-white hover:text-sky-400 transition-colors"

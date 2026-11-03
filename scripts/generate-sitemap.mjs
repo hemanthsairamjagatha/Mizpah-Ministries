@@ -23,6 +23,7 @@ const routes = [
   { path: '/about-god/god-the-father', priority: '0.8', changefreq: 'monthly', comment: 'God the Father' },
   { path: '/about-god/jesus-christ-the-son-of-god', priority: '0.8', changefreq: 'monthly', comment: 'Jesus Christ' },
   { path: '/about-god/the-holy-spirit', priority: '0.8', changefreq: 'monthly', comment: 'The Holy Spirit' },
+  { path: '/our-vision', priority: '0.8', changefreq: 'monthly', comment: 'Our Vision & Ministries' },
   { path: '/founder', priority: '0.8', changefreq: 'monthly', comment: 'Pastoral Founder Biography' },
   { path: '/gallery', priority: '0.8', changefreq: 'weekly', comment: 'Photo Gallery' },
   { path: '/donate', priority: '0.8', changefreq: 'monthly', comment: 'Online Giving & Stewardship' },

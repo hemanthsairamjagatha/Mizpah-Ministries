@@ -25,7 +25,7 @@ export const PAGES: Record<string, PageMeta> = {
   '/': {
     title: 'Mizpah Ministries India | Church in Kanigiri, Andhra Pradesh',
     description:
-      'A Christ-centered church and community ministry in Kanigiri, Andhra Pradesh. Watch sermons, learn what we believe, give, or send a prayer request.',
+      'A Christ-centered church and community ministry in Kanigiri, Andhra Pradesh. WATCH BAPTISMS, learn what we believe, give, or send a prayer request.',
     crumb: 'Home',
   },
   '/sermons': {
@@ -65,6 +65,18 @@ export const PAGES: Record<string, PageMeta> = {
       'Scriptural teaching on the person, gifts, fruit and sanctifying work of the Holy Spirit.',
     crumb: 'The Holy Spirit',
     type: 'article',
+  },
+  '/our-vision': {
+    title: 'Our Vision & Ministries | Mizpah Ministries India',
+    description:
+      'Explore the vision, ministries, and community initiatives of Mizpah Ministries in Kanigiri, Andhra Pradesh.',
+    crumb: 'Our Vision',
+  },
+  '/vision': {
+    title: 'Our Vision & Ministries | Mizpah Ministries India',
+    description:
+      'Explore the vision, ministries, and community initiatives of Mizpah Ministries in Kanigiri, Andhra Pradesh.',
+    crumb: 'Our Vision',
   },
   '/founder': {
     title: 'Our Founding Pastor | Mizpah Ministries India',
