@@ -28,7 +28,7 @@ export const FounderDonationCTA: React.FC = () => {
           }}
           className="text-3xl sm:text-5xl lg:text-6xl font-normal text-white mb-6 leading-tight drop-shadow-md"
         >
-          Would You Like to Partner With Us in God’s Work?
+          Would You Like to be as a Partner With Us in the God’s Work?
         </h2>
 
         {/* Polite, Heartfelt Description */}

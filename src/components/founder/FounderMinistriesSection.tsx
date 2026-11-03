@@ -136,7 +136,7 @@ export const FounderMinistriesSection: React.FC = () => {
             style={{ fontFamily: "'Inter', sans-serif" }}
             className="font-inter text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight"
           >
-            Ministries & Initiatives
+            Ministries
           </h2>
         </div>
 
@@ -154,9 +154,8 @@ export const FounderMinistriesSection: React.FC = () => {
               >
                 {/* Text Content Column */}
                 <div
-                  className={`w-full md:w-1/2 p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center ${
-                    isImageRight ? 'order-2 md:order-1' : 'order-2 md:order-2'
-                  }`}
+                  className={`w-full md:w-1/2 p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center ${isImageRight ? 'order-2 md:order-1' : 'order-2 md:order-2'
+                    }`}
                 >
                   <h3
                     style={{ fontFamily: "'Inter', sans-serif" }}
@@ -174,9 +173,8 @@ export const FounderMinistriesSection: React.FC = () => {
 
                 {/* Image Column */}
                 <div
-                  className={`w-full md:w-1/2 h-64 sm:h-80 md:h-auto min-h-[260px] md:min-h-[340px] relative overflow-hidden bg-slate-100 ${
-                    isImageRight ? 'order-1 md:order-2' : 'order-1 md:order-1'
-                  }`}
+                  className={`w-full md:w-1/2 h-64 sm:h-80 md:h-auto min-h-[260px] md:min-h-[340px] relative overflow-hidden bg-slate-100 ${isImageRight ? 'order-1 md:order-2' : 'order-1 md:order-1'
+                    }`}
                 >
                   <img
                     src={item.image}

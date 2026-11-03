@@ -66,7 +66,7 @@ export const OurVisionPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Ministries & Initiatives Section */}
+        {/* Ministries Section */}
         <FounderMinistriesSection />
 
         {/* Donation / Partnership Invitation CTA Banner */}
