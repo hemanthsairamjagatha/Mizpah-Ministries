@@ -44,7 +44,7 @@ export const AboutGodSection: React.FC<AboutGodSectionProps> = ({ isLoading }) =
 
           <p
             style={{ fontFamily: "'Inter', sans-serif" }}
-            className="font-inter text-base sm:text-lg font-bold text-slate-900 tracking-wide"
+            className="font-inter text-base sm:text-lg font-bold text-slate-900 tracking-wide text-left md:text-center max-w-2xl mx-auto"
           >
             Text :
           </p>
