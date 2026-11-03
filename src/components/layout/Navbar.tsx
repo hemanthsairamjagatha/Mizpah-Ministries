@@ -27,8 +27,14 @@ export const Navbar: React.FC<NavbarProps> = ({ settings }) => {
       return;
     }
 
-    if (location.pathname === '/our-vision' || location.pathname.startsWith('/our-vision') || location.pathname === '/vision') {
-      setActiveSection('our-vision');
+    if (
+      location.pathname === '/my-vision' ||
+      location.pathname.startsWith('/my-vision') ||
+      location.pathname === '/our-vision' ||
+      location.pathname.startsWith('/our-vision') ||
+      location.pathname === '/vision'
+    ) {
+      setActiveSection('my-vision');
       setIsScrolled(true);
       return;
     }
@@ -72,7 +78,7 @@ export const Navbar: React.FC<NavbarProps> = ({ settings }) => {
   const navLinks = [
     { name: 'Home', href: '#home', id: 'home' },
     { name: 'The Gospel', href: '/the-gospel', id: 'the-gospel' },
-    { name: 'Our Vision', href: '/our-vision', id: 'our-vision' },
+    { name: 'My Vision', href: '/my-vision', id: 'my-vision' },
     { name: 'Founder', href: '/founder', id: 'founder' },
     { name: 'Baptisms', href: '/sermons', id: 'sermons' },
     { name: 'Gallery', href: '/gallery', id: 'gallery' },
@@ -103,10 +109,10 @@ export const Navbar: React.FC<NavbarProps> = ({ settings }) => {
       return;
     }
 
-    if (href === '/our-vision' || href === '/vision') {
+    if (href === '/my-vision' || href === '/our-vision' || href === '/vision') {
       e.preventDefault();
-      if (location.pathname !== '/our-vision') {
-        navigate('/our-vision');
+      if (location.pathname !== '/my-vision') {
+        navigate('/my-vision');
       } else {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }

@@ -66,17 +66,23 @@ export const PAGES: Record<string, PageMeta> = {
     crumb: 'The Holy Spirit',
     type: 'article',
   },
-  '/our-vision': {
-    title: 'Our Vision & Ministries | Mizpah Ministries India',
+  '/my-vision': {
+    title: 'My Vision & Ministries | Mizpah Ministries India',
     description:
       'Explore the vision, ministries, and community initiatives of Mizpah Ministries in Kanigiri, Andhra Pradesh.',
-    crumb: 'Our Vision',
+    crumb: 'My Vision',
+  },
+  '/our-vision': {
+    title: 'My Vision & Ministries | Mizpah Ministries India',
+    description:
+      'Explore the vision, ministries, and community initiatives of Mizpah Ministries in Kanigiri, Andhra Pradesh.',
+    crumb: 'My Vision',
   },
   '/vision': {
-    title: 'Our Vision & Ministries | Mizpah Ministries India',
+    title: 'My Vision & Ministries | Mizpah Ministries India',
     description:
       'Explore the vision, ministries, and community initiatives of Mizpah Ministries in Kanigiri, Andhra Pradesh.',
-    crumb: 'Our Vision',
+    crumb: 'My Vision',
   },
   '/founder': {
     title: 'Our Founding Pastor | Mizpah Ministries India',

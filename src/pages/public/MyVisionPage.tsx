@@ -7,7 +7,7 @@ import { FounderDonationCTA } from '../../components/founder/FounderDonationCTA'
 import { siteSettingsService } from '../../services/siteSettingsService';
 import type { SiteSettings } from '../../types/database.types';
 
-export const OurVisionPage: React.FC = () => {
+export const MyVisionPage: React.FC = () => {
   const [settings, setSettings] = useState<SiteSettings | null>(null);
   const [, setIsLoading] = useState(true);
 
@@ -29,7 +29,7 @@ export const OurVisionPage: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <Seo path="/our-vision" />
+      <Seo path="/my-vision" />
       <Navbar settings={settings} />
       <main className="flex-grow pt-[100px]">
         {/* Small Hero Section */}
@@ -38,7 +38,7 @@ export const OurVisionPage: React.FC = () => {
           <div className="absolute inset-0 z-0">
             <img
               src="/images/hero-church.jpg"
-              alt="Our Vision - Mizpah Ministries"
+              alt="My Vision - Mizpah Ministries"
               className="w-full h-full object-cover object-center"
               style={{
                 filter: 'contrast(1.05) brightness(0.85)',
@@ -54,7 +54,7 @@ export const OurVisionPage: React.FC = () => {
               style={{ fontFamily: "'Inter', sans-serif" }}
               className="font-inter text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white drop-shadow-md leading-tight"
             >
-              Our Vision
+              My Vision
             </h1>
 
             <p
@@ -76,3 +76,5 @@ export const OurVisionPage: React.FC = () => {
     </div>
   );
 };
+
+export const OurVisionPage = MyVisionPage;
