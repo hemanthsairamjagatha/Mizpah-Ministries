@@ -24,10 +24,11 @@ export const AboutGodSection: React.FC<AboutGodSectionProps> = ({ isLoading }) =
 
   return (
     <section
-      id="about-god"
+      id="the-gospel"
       style={{ padding: '60px 0px' }}
-      className="py-[60px] px-0 bg-white border-b border-slate-100"
+      className="py-[60px] px-0 bg-white border-b border-slate-100 relative"
     >
+      <span id="about-god" className="absolute -top-24 pointer-events-none opacity-0" aria-hidden="true" />
       <div
         style={{ margin: '0px' }}
         className="w-full px-4 sm:px-6 lg:px-8 !m-0"

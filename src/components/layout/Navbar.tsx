@@ -21,8 +21,8 @@ export const Navbar: React.FC<NavbarProps> = ({ settings }) => {
       return;
     }
 
-    if (location.pathname === '/about-god' || location.pathname.startsWith('/about')) {
-      setActiveSection('about-god');
+    if (location.pathname === '/the-gospel' || location.pathname === '/about-god' || location.pathname.startsWith('/the-gospel') || location.pathname.startsWith('/about')) {
+      setActiveSection('the-gospel');
       setIsScrolled(true);
       return;
     }
@@ -65,7 +65,7 @@ export const Navbar: React.FC<NavbarProps> = ({ settings }) => {
 
   const navLinks = [
     { name: 'Home', href: '#home', id: 'home' },
-    { name: 'About God', href: '/about-god', id: 'about-god' },
+    { name: 'The Gospel', href: '/the-gospel', id: 'the-gospel' },
     { name: 'Founder', href: '/founder', id: 'founder' },
     { name: 'Baptisms', href: '/sermons', id: 'sermons' },
     { name: 'Gallery', href: '/gallery', id: 'gallery' },
@@ -86,10 +86,10 @@ export const Navbar: React.FC<NavbarProps> = ({ settings }) => {
       return;
     }
 
-    if (href === '/about-god') {
+    if (href === '/the-gospel' || href === '/about-god') {
       e.preventDefault();
-      if (location.pathname !== '/about-god') {
-        navigate('/about-god');
+      if (location.pathname !== '/the-gospel') {
+        navigate('/the-gospel');
       } else {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }

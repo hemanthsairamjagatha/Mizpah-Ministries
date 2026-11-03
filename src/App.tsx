@@ -77,12 +77,17 @@ export const App: React.FC = () => {
         {/* Public Website */}
         <Route path="/" element={<HomePage />} />
         <Route path="/sermons" element={<SermonsPage />} />
-        <Route path="/about-god" element={<AboutGodPage />} />
-        <Route path="/about-god/:slug" element={<AboutGodDetailPage />} />
-        <Route path="/about_god" element={<Navigate to="/about-god" replace />} />
-        <Route path="/about_god/:slug" element={<Navigate to="/about-god/:slug" replace />} />
-        <Route path="/about%20god" element={<Navigate to="/about-god" replace />} />
-        <Route path="/about god" element={<Navigate to="/about-god" replace />} />
+        <Route path="/the-gospel" element={<AboutGodPage />} />
+        <Route path="/the-gospel/:slug" element={<AboutGodDetailPage />} />
+        <Route path="/about-god" element={<Navigate to="/the-gospel" replace />} />
+        <Route path="/about-god/:slug" element={<Navigate to="/the-gospel/:slug" replace />} />
+        <Route path="/the-gospal" element={<Navigate to="/the-gospel" replace />} />
+        <Route path="/gospel" element={<Navigate to="/the-gospel" replace />} />
+        <Route path="/the_gospel" element={<Navigate to="/the-gospel" replace />} />
+        <Route path="/about_god" element={<Navigate to="/the-gospel" replace />} />
+        <Route path="/about_god/:slug" element={<Navigate to="/the-gospel/:slug" replace />} />
+        <Route path="/about%20god" element={<Navigate to="/the-gospel" replace />} />
+        <Route path="/about god" element={<Navigate to="/the-gospel" replace />} />
         <Route path="/founder" element={<FounderPage />} />
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/contact" element={<ContactPage />} />
@@ -102,7 +107,8 @@ export const App: React.FC = () => {
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminOverviewPage />} />
             <Route path="hero" element={<HeroManagerPage />} />
-            <Route path="about-god" element={<AboutGodManagerPage />} />
+            <Route path="the-gospel" element={<AboutGodManagerPage />} />
+            <Route path="about-god" element={<Navigate to="/admin/the-gospel" replace />} />
             <Route path="founder" element={<FounderManagerPage />} />
             <Route path="sermons" element={<SermonsManagerPage />} />
             <Route path="gallery" element={<GalleryManagerPage />} />

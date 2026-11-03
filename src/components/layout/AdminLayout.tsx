@@ -43,7 +43,7 @@ export const AdminLayout: React.FC = () => {
   const navItems = [
     { label: 'Dashboard', path: '/admin', icon: LayoutDashboard, end: true },
     { label: 'Hero Slides', path: '/admin/hero', icon: Sparkles },
-    { label: 'The Gospel', path: '/admin/about-god', icon: BookOpen },
+    { label: 'The Gospel', path: '/admin/the-gospel', icon: BookOpen },
     { label: 'Pastoral Founder', path: '/admin/founder', icon: HeartHandshake },
     { label: 'Sermons Archive', path: '/admin/sermons', icon: Tv },
     { label: 'Photo Gallery', path: '/admin/gallery', icon: Camera },

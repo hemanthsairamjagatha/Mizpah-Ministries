@@ -7,7 +7,7 @@ Mizpah Ministries is an evangelical Christian ministry based in Kanigiri, Andhra
 ## About & Core Faith
 
 - [Home Sanctuary](https://mizpahministries.org/): Official homepage outlining church vision, Sunday service times, sanctuary location, and core announcements.
-- [About God](https://mizpahministries.org/about-god): Fundamental doctrinal statement articulating Christian orthodoxy across the Trinity.
+- [The Gospel](https://mizpahministries.org/the-gospel): Fundamental doctrinal statement and scripture regarding The Gospel.
 - [God the Father](https://mizpahministries.org/about-god/god-the-father): Theological exposition regarding the nature, sovereignty, holiness, and eternal fatherhood of God.
 - [Jesus Christ, the Son of God](https://mizpahministries.org/about-god/jesus-christ-the-son-of-god): Biblical teaching on the divinity, incarnation, atonement, and resurrection of Jesus Christ.
 - [The Holy Spirit](https://mizpahministries.org/about-god/the-holy-spirit): Scriptural doctrine covering the person, gifts, fruit, and sanctifying presence of the Holy Spirit.

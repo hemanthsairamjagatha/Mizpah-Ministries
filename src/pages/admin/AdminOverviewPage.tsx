@@ -5,6 +5,7 @@ import { formatDate } from '../../lib/utils';
 import {
   Tv,
   Church,
+  BookOpen,
   Camera,
   MessageSquare,
   MailCheck,
@@ -89,10 +90,10 @@ export const AdminOverviewPage: React.FC = () => {
       color: 'text-sky-500 bg-sky-50',
     },
     {
-      title: 'About God Cards',
+      title: 'The Gospel',
       value: stats.aboutGodCount,
-      link: '/admin/about-god',
-      icon: Church,
+      link: '/admin/the-gospel',
+      icon: BookOpen,
       color: 'text-indigo-500 bg-indigo-50',
     },
     {

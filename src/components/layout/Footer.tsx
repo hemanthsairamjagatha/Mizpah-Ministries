@@ -124,11 +124,11 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
               </li>
               <li>
                 <Link
-                  to="/about-god"
+                  to="/the-gospel"
                   style={{ color: '#FFFFFF', fontFamily: "'Inter', sans-serif" }}
                   className="font-inter text-white hover:text-sky-400 transition-colors"
                 >
-                  About God
+                  The Gospel
                 </Link>
               </li>
               <li>

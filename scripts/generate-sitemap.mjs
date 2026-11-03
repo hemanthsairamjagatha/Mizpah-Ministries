@@ -19,7 +19,7 @@ const today = new Date().toISOString().split('T')[0];
 const routes = [
   { path: '/', priority: '1.0', changefreq: 'weekly', comment: 'Home Sanctuary' },
   { path: '/sermons', priority: '0.9', changefreq: 'weekly', comment: 'Sermons Archive' },
-  { path: '/about-god', priority: '0.9', changefreq: 'monthly', comment: 'About God Core Beliefs' },
+  { path: '/the-gospel', priority: '0.9', changefreq: 'monthly', comment: 'The Gospel' },
   { path: '/about-god/god-the-father', priority: '0.8', changefreq: 'monthly', comment: 'God the Father' },
   { path: '/about-god/jesus-christ-the-son-of-god', priority: '0.8', changefreq: 'monthly', comment: 'Jesus Christ' },
   { path: '/about-god/the-holy-spirit', priority: '0.8', changefreq: 'monthly', comment: 'The Holy Spirit' },

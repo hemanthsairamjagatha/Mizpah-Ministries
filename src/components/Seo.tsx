@@ -34,11 +34,17 @@ export const PAGES: Record<string, PageMeta> = {
       'Witness water baptisms and sacred declarations of faith at Mizpah Ministries in Kanigiri, Andhra Pradesh.',
     crumb: 'Baptisms',
   },
-  '/about-god': {
-    title: 'What We Believe About God | Mizpah Ministries India',
+  '/the-gospel': {
+    title: 'The Gospel | Mizpah Ministries India',
     description:
-      "Mizpah Ministries' doctrinal statement on God: the Father, the Son Jesus Christ and the Holy Spirit.",
-    crumb: 'About God',
+      'Explore The Gospel and biblical faith at Mizpah Ministries in Kanigiri, Andhra Pradesh.',
+    crumb: 'The Gospel',
+  },
+  '/about-god': {
+    title: 'The Gospel | Mizpah Ministries India',
+    description:
+      'Explore The Gospel and biblical faith at Mizpah Ministries in Kanigiri, Andhra Pradesh.',
+    crumb: 'The Gospel',
   },
   '/about-god/god-the-father': {
     title: 'God the Father | Mizpah Ministries India',
