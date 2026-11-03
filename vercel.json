@@ -17,6 +17,8 @@
     { "source": "/our_vision", "destination": "/my-vision", "permanent": true },
     { "source": "/vision", "destination": "/my-vision", "permanent": true },
     { "source": "/my_vision", "destination": "/my-vision", "permanent": true },
+    { "source": "/pastor", "destination": "/founder", "permanent": true },
+    { "source": "/paster", "destination": "/founder", "permanent": true },
     { "source": "/donating", "destination": "/donate", "permanent": true },
     { "source": "/giving", "destination": "/donate", "permanent": true },
     { "source": "/privacy-policy", "destination": "/privacy", "permanent": true },

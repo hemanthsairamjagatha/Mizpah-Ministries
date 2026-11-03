@@ -39,8 +39,12 @@ export const Navbar: React.FC<NavbarProps> = ({ settings }) => {
       return;
     }
 
-    if (location.pathname === '/founder') {
-      setActiveSection('founder');
+    if (
+      location.pathname === '/founder' ||
+      location.pathname === '/pastor' ||
+      location.pathname === '/paster'
+    ) {
+      setActiveSection('pastor');
       setIsScrolled(true);
       return;
     }
@@ -79,7 +83,7 @@ export const Navbar: React.FC<NavbarProps> = ({ settings }) => {
     { name: 'Home', href: '#home', id: 'home' },
     { name: 'The Gospel', href: '/the-gospel', id: 'the-gospel' },
     { name: 'My Vision', href: '/my-vision', id: 'my-vision' },
-    { name: 'Founder', href: '/founder', id: 'founder' },
+    { name: 'Pastor', href: '/founder', id: 'pastor' },
     { name: 'Baptisms', href: '/sermons', id: 'sermons' },
     { name: 'Gallery', href: '/gallery', id: 'gallery' },
     { name: 'Donate', href: '/donate', id: 'donate' },
@@ -119,7 +123,7 @@ export const Navbar: React.FC<NavbarProps> = ({ settings }) => {
       return;
     }
 
-    if (href === '/founder') {
+    if (href === '/founder' || href === '/pastor' || href === '/paster') {
       e.preventDefault();
       if (location.pathname !== '/founder') {
         navigate('/founder');

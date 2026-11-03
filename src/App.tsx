@@ -95,6 +95,8 @@ export const App: React.FC = () => {
         <Route path="/our_vision" element={<Navigate to="/my-vision" replace />} />
         <Route path="/vision" element={<Navigate to="/my-vision" replace />} />
         <Route path="/founder" element={<FounderPage />} />
+        <Route path="/pastor" element={<Navigate to="/founder" replace />} />
+        <Route path="/paster" element={<Navigate to="/founder" replace />} />
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/donate" element={<DonatePage />} />
