@@ -3,7 +3,6 @@ import Seo from '../../components/Seo';
 import { Navbar } from '../../components/layout/Navbar';
 import { Footer } from '../../components/layout/Footer';
 import { FounderSection } from '../../components/home/FounderSection';
-import { FounderMinistriesSection } from '../../components/founder/FounderMinistriesSection';
 import { FounderDonationCTA } from '../../components/founder/FounderDonationCTA';
 import { siteSettingsService } from '../../services/siteSettingsService';
 import { founderService } from '../../services/founderService';
@@ -79,9 +78,6 @@ export const FounderPage: React.FC = () => {
           qualification={(founder as any)?.qualification || 'B.A, B.sc, LLB, LLM, B.Th'}
           showActions={false}
         />
-
-        {/* Ministries & Initiatives Section under Founder */}
-        <FounderMinistriesSection />
 
         {/* Donation Invitation CTA Banner */}
         <FounderDonationCTA />
