@@ -37,7 +37,7 @@ export const AboutGodSection: React.FC<AboutGodSectionProps> = ({ isLoading }) =
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <h2
             style={{ fontFamily: "'Inter', sans-serif" }}
-            className="font-inter text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight"
+            className="font-inter text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight text-left md:text-center max-w-2xl mx-auto"
           >
             The Gospel
           </h2>
