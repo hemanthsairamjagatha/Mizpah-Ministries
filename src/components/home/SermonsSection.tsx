@@ -180,7 +180,7 @@ export const SermonsSection: React.FC<SermonsSectionProps> = ({
                       onClick={() => setActiveVideoSermon(sermon)}
                       className="w-full justify-center"
                     >
-                      Watch Sermon
+                      Watch Baptisms
                     </Button>
                   </div>
                 </div>

@@ -47,7 +47,7 @@ export const AboutGodSermonsCTA: React.FC = () => {
             style={{ fontFamily: "'Inter', sans-serif" }}
             className="inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 rounded-full border border-white/90 text-white font-medium text-xs sm:text-sm tracking-widest uppercase hover:bg-white hover:text-navy-950 transition-all duration-300 shadow-md cursor-pointer group"
           >
-            <span>Watch Sermons</span>
+            <span>Watch Baptisms</span>
           </Link>
         </div>
       </div>

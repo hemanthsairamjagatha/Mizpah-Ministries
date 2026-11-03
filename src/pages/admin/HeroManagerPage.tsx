@@ -25,7 +25,7 @@ export const HeroManagerPage: React.FC = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [imagePath, setImagePath] = useState('');
-  const [buttonText, setButtonText] = useState('Watch Sermons');
+  const [buttonText, setButtonText] = useState('Watch Baptisms');
   const [buttonUrl, setButtonUrl] = useState('#sermons');
   const [isPublished, setIsPublished] = useState(true);
   const [sortOrder, setSortOrder] = useState(1);
@@ -59,7 +59,7 @@ export const HeroManagerPage: React.FC = () => {
     setTitle('');
     setDescription('');
     setImagePath('https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=1920&q=80');
-    setButtonText('Watch Sermons');
+    setButtonText('Watch Baptisms');
     setButtonUrl('#sermons');
     setIsPublished(true);
     setSortOrder(slides.length + 1);
@@ -329,7 +329,7 @@ export const HeroManagerPage: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Input
               label="CTA Button Text"
-              placeholder="e.g. Watch Sermons"
+              placeholder="e.g. Watch Baptisms"
               value={buttonText}
               onChange={(e) => setButtonText(e.target.value)}
             />
