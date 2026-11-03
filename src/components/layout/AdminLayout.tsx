@@ -16,6 +16,7 @@ import {
   X,
   ExternalLink,
   Church,
+  BookOpen,
   ShieldCheck,
   ChevronRight,
   MapPin,
@@ -42,7 +43,7 @@ export const AdminLayout: React.FC = () => {
   const navItems = [
     { label: 'Dashboard', path: '/admin', icon: LayoutDashboard, end: true },
     { label: 'Hero Slides', path: '/admin/hero', icon: Sparkles },
-    { label: 'About God Cards', path: '/admin/about-god', icon: Church },
+    { label: 'The Gospel', path: '/admin/about-god', icon: BookOpen },
     { label: 'Pastoral Founder', path: '/admin/founder', icon: HeartHandshake },
     { label: 'Sermons Archive', path: '/admin/sermons', icon: Tv },
     { label: 'Photo Gallery', path: '/admin/gallery', icon: Camera },

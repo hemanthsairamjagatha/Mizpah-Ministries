@@ -462,3 +462,14 @@ export interface DonationDetails {
   branch: string;
   swift_code: string;
 }
+
+export interface GospelText {
+  id: string;
+  heading?: string;
+  label?: string;
+  scripture: string;
+  priority?: number;
+  is_published: boolean;
+  created_at: string;
+  updated_at: string;
+}

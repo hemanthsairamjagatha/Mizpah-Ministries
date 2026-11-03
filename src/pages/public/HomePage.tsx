@@ -13,7 +13,6 @@ import { ContactSection } from '../../components/home/ContactSection';
 
 import { siteSettingsService } from '../../services/siteSettingsService';
 import { heroService } from '../../services/heroService';
-import { aboutGodService } from '../../services/aboutGodService';
 import { founderService } from '../../services/founderService';
 import { sermonService } from '../../services/sermonService';
 import { galleryService } from '../../services/galleryService';
@@ -21,7 +20,6 @@ import { galleryService } from '../../services/galleryService';
 import type {
   SiteSettings,
   HeroSection as HeroSectionType,
-  AboutGodCard,
   Founder,
   Sermon,
   GalleryCategory,
@@ -31,7 +29,6 @@ import type {
 export const HomePage: React.FC = () => {
   const [settings, setSettings] = useState<SiteSettings | null>(null);
   const [heroSlides, setHeroSlides] = useState<HeroSectionType[]>([]);
-  const [aboutGodCards, setAboutGodCards] = useState<AboutGodCard[]>([]);
   const [founder, setFounder] = useState<Founder | null>(null);
   const [sermons, setSermons] = useState<Sermon[]>([]);
   const [galleryCategories, setGalleryCategories] = useState<GalleryCategory[]>([]);
@@ -73,7 +70,6 @@ export const HomePage: React.FC = () => {
         const [
           settingsData,
           heroData,
-          aboutGodData,
           founderData,
           sermonsData,
           categoriesData,
@@ -81,7 +77,6 @@ export const HomePage: React.FC = () => {
         ] = await Promise.all([
           siteSettingsService.getSiteSettings(),
           heroService.getPublishedHeroSections(),
-          aboutGodService.getPublishedAboutGodCards(),
           founderService.getPrimaryFounder(),
           sermonService.getPublishedSermons(),
           galleryService.getCategories(),
@@ -90,7 +85,6 @@ export const HomePage: React.FC = () => {
 
         setSettings(settingsData);
         setHeroSlides(heroData);
-        setAboutGodCards(aboutGodData);
         setFounder(founderData);
         setSermons(sermonsData);
         setGalleryCategories(categoriesData);
@@ -115,13 +109,8 @@ export const HomePage: React.FC = () => {
         {/* B. Hero Section */}
         <HeroSection slides={heroSlides} isLoading={isLoading} />
 
-        {/* C. About God Section */}
-        <AboutGodSection
-          cards={aboutGodCards}
-          isLoading={isLoading}
-          limit={3}
-          showViewMore={true}
-        />
+        {/* C. The Gospel Section */}
+        <AboutGodSection isLoading={isLoading} />
 
         {/* D. Founder Section */}
         <FounderSection founder={founder} isLoading={isLoading} settings={settings} />

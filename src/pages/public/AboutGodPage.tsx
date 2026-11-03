@@ -5,24 +5,18 @@ import { Footer } from '../../components/layout/Footer';
 import { AboutGodSection } from '../../components/home/AboutGodSection';
 import { AboutGodSermonsCTA } from '../../components/about-god/AboutGodSermonsCTA';
 import { siteSettingsService } from '../../services/siteSettingsService';
-import { aboutGodService } from '../../services/aboutGodService';
-import type { SiteSettings, AboutGodCard } from '../../types/database.types';
+import type { SiteSettings } from '../../types/database.types';
 
 export const AboutGodPage: React.FC = () => {
   const [settings, setSettings] = useState<SiteSettings | null>(null);
-  const [cards, setCards] = useState<AboutGodCard[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
     const fetchAboutGodData = async () => {
       try {
-        const [settingsData, cardsData] = await Promise.all([
-          siteSettingsService.getSiteSettings(),
-          aboutGodService.getPublishedAboutGodCards(),
-        ]);
+        const settingsData = await siteSettingsService.getSiteSettings();
         setSettings(settingsData);
-        setCards(cardsData);
       } catch (err) {
         console.error('Failed to load About God page content:', err);
       } finally {
@@ -72,8 +66,8 @@ export const AboutGodPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Section Cards */}
-        <AboutGodSection cards={cards} isLoading={isLoading} />
+        {/* The Gospel Section */}
+        <AboutGodSection isLoading={isLoading} />
 
         {/* Sermons CTA Banner */}
         <AboutGodSermonsCTA />
