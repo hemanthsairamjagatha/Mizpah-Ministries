@@ -158,7 +158,7 @@ export const FounderSection: React.FC<FounderSectionProps> = ({
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                     className="inline-flex items-center justify-center px-7 py-3 rounded-full font-semibold text-sm text-white bg-[#00A3E0] hover:bg-[#008fcc] shadow-sm transition-all"
                   >
-                    Learn about {firstName}
+                    About {firstName}
                   </Link>
                 </div>
                 <div className="mt-4 px-4 sm:mt-0 sm:px-0">
