@@ -22,7 +22,7 @@ export const SermonsSection: React.FC<SermonsSectionProps> = ({
   limit,
   showViewMore = false,
   showSearch = true,
-  title = 'Latest Sermons & Messages',
+  title = 'Baptisms',
 }) => {
   const navigate = useNavigate();
   const [activeVideoSermon, setActiveVideoSermon] = useState<Sermon | null>(null);

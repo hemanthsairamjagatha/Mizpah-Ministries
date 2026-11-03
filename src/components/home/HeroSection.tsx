@@ -82,7 +82,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ slides, isLoading }) =
           style={{ color: '#FFFFFF', fontFamily: "'Inter', sans-serif" }}
           className="font-inter text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-white drop-shadow-sm"
         >
-          Welcome to Mizpah Ministries
+          Welcome
         </p>
 
         <h1
@@ -163,11 +163,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ slides, isLoading }) =
               <button
                 key={slide.id}
                 onClick={() => setCurrentSlideIndex(idx)}
-                className={`h-2.5 rounded-full transition-all ${
-                  idx === currentSlideIndex
+                className={`h-2.5 rounded-full transition-all ${idx === currentSlideIndex
                     ? 'w-8 bg-sky-400'
                     : 'w-2.5 bg-white/40 hover:bg-white/70'
-                }`}
+                  }`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
             ))}
