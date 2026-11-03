@@ -67,7 +67,7 @@ export const Navbar: React.FC<NavbarProps> = ({ settings }) => {
     { name: 'Home', href: '#home', id: 'home' },
     { name: 'About God', href: '/about-god', id: 'about-god' },
     { name: 'Founder', href: '/founder', id: 'founder' },
-    { name: 'Sermons', href: '/sermons', id: 'sermons' },
+    { name: 'Baptisms', href: '/sermons', id: 'sermons' },
     { name: 'Gallery', href: '/gallery', id: 'gallery' },
     { name: 'Donate', href: '/donate', id: 'donate' },
     { name: 'Contact', href: '/contact', id: 'contact' },

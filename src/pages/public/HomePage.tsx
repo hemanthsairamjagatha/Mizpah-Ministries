@@ -124,7 +124,7 @@ export const HomePage: React.FC = () => {
         />
 
         {/* D. Founder Section */}
-        <FounderSection founder={founder} isLoading={isLoading} />
+        <FounderSection founder={founder} isLoading={isLoading} settings={settings} />
 
         {/* E. Sermons Section */}
         <SermonsSection

@@ -29,10 +29,10 @@ export const PAGES: Record<string, PageMeta> = {
     crumb: 'Home',
   },
   '/sermons': {
-    title: 'Sermons | Mizpah Ministries India',
+    title: 'Baptisms | Mizpah Ministries India',
     description:
-      'Watch and search the Mizpah Ministries archive of video sermons and biblical teaching from Kanigiri, Andhra Pradesh.',
-    crumb: 'Sermons',
+      'Witness water baptisms and sacred declarations of faith at Mizpah Ministries in Kanigiri, Andhra Pradesh.',
+    crumb: 'Baptisms',
   },
   '/about-god': {
     title: 'What We Believe About God | Mizpah Ministries India',

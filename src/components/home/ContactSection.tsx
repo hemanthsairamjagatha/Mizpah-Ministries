@@ -53,12 +53,34 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ settings }) => {
   const phone = activeCampus?.phone || settings?.contact_phone || '';
   const email = activeCampus?.email || settings?.contact_email || '';
 
-  // Google Maps URL priority: active campus map_url -> site settings social_links.map_url -> Google Maps query fallback
-  const customMapUrl = activeCampus?.map_url || (settings?.social_links as any)?.map_url;
+  // Google Maps Location URL priority:
+  // 1. Specific campus map_url (if not default fallback and not empty)
+  // 2. Site Settings social_links.map_url (configured in Admin -> Site Settings -> Google Maps Location URL)
+  // 3. Fallback to campus map_url if present
+  // 4. Fallback to Google Maps search query generated from church address
+  const siteMapUrl = ((settings?.social_links as any)?.map_url as string | undefined)?.trim();
+  const campusMapUrl = (activeCampus?.map_url as string | undefined)?.trim();
+
+  const isFallbackQueryUrl = (url?: string) =>
+    !url || url.includes('/maps/search/?api=1&query=');
+
+  let chosenMapUrl = '';
+  if (campusMapUrl && !isFallbackQueryUrl(campusMapUrl)) {
+    chosenMapUrl = campusMapUrl;
+  } else if (siteMapUrl) {
+    chosenMapUrl = siteMapUrl;
+  } else if (campusMapUrl) {
+    chosenMapUrl = campusMapUrl;
+  }
+
   const fallbackMapUrl = rawAddress
     ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(rawAddress.replace(/\n/g, ', '))}`
     : '#';
-  const mapUrl = customMapUrl && customMapUrl.trim() ? customMapUrl.trim() : fallbackMapUrl;
+
+  const rawFinalMapUrl = chosenMapUrl || fallbackMapUrl;
+  const mapUrl = rawFinalMapUrl && rawFinalMapUrl !== '#'
+    ? (/^https?:\/\//i.test(rawFinalMapUrl) ? rawFinalMapUrl : `https://${rawFinalMapUrl}`)
+    : '#';
 
   // Parse address lines cleanly
   const addressLines = rawAddress
@@ -273,7 +295,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ settings }) => {
             </div>
           </div>
 
-          {/* Right Card: Campus Information */}
+          {/* Right Card: Contact Information */}
           <div
             className="lg:col-span-4 bg-white rounded-[20px] p-[48px_16px] sm:p-[32px] shadow-xs border border-slate-200/70 flex flex-col justify-start"
           >
@@ -281,7 +303,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ settings }) => {
               style={{ fontFamily: "'Inter', sans-serif", margin: '0px 0px 48px' }}
               className="font-inter text-[24px] sm:text-[26px] font-bold text-slate-900 mb-[48px]"
             >
-              Campus Information
+              Contact Information
             </h3>
 
             {/* Campus Selector if multiple campuses exist */}
@@ -312,12 +334,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ settings }) => {
                 {rawAddress && (
                   <div>
                     <div className="flex items-center justify-between mb-1.5">
-                      <span
+                      <a
+                        href={mapUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         style={{ color: '#4CA7E3', fontFamily: "'Inter', sans-serif" }}
-                        className="text-[11px] font-bold uppercase tracking-wider block"
+                        className="text-[11px] font-bold uppercase tracking-wider block hover:underline cursor-pointer"
+                        title="Open in Google Maps"
                       >
                         OFFICE ADDRESS
-                      </span>
+                      </a>
                       {mapUrl && mapUrl !== '#' && (
                         <a
                           href={mapUrl}

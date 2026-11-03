@@ -22,12 +22,18 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
   const email = settings?.contact_email || '';
   const phone = settings?.contact_phone || '';
   const address = settings?.address || DEFAULT_SANCTUARY_ADDRESS;
-  const socials = settings?.social_links || {};
+  const rawSocials = settings?.social_links;
+  const socials = typeof rawSocials === 'string'
+    ? (() => { try { return JSON.parse(rawSocials); } catch { return {}; } })()
+    : (rawSocials || {});
   const customMapUrl = (socials as any)?.map_url;
   const fallbackMapUrl = address
     ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address.replace(/\n/g, ', '))}`
     : '#';
-  const mapUrl = customMapUrl && customMapUrl.trim() ? customMapUrl.trim() : fallbackMapUrl;
+  const rawMapUrl = customMapUrl && customMapUrl.trim() ? customMapUrl.trim() : fallbackMapUrl;
+  const mapUrl = rawMapUrl && rawMapUrl !== '#'
+    ? (/^https?:\/\//i.test(rawMapUrl) ? rawMapUrl : `https://${rawMapUrl}`)
+    : '#';
 
   return (
     <footer className="bg-navy-950 text-slate-300 pt-16 pb-12 border-t border-navy-900">
@@ -79,7 +85,7 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
               )}
               {socials.youtube && (
                 <a
-                  href={socials.youtube}
+                  href={/^https?:\/\//i.test(socials.youtube) ? socials.youtube : `https://${socials.youtube}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 rounded-lg bg-navy-900 flex items-center justify-center text-slate-400 hover:text-white hover:bg-sky-500 transition-colors"
@@ -135,7 +141,7 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
                   style={{ color: '#FFFFFF', fontFamily: "'Inter', sans-serif" }}
                   className="font-inter text-white hover:text-sky-400 transition-colors"
                 >
-                  Our Pastoral Founder
+                  Our Pastor
                 </Link>
               </li>
               <li>
@@ -144,7 +150,7 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
                   style={{ color: '#FFFFFF', fontFamily: "'Inter', sans-serif" }}
                   className="font-inter text-white hover:text-sky-400 transition-colors"
                 >
-                  Latest Sermons
+                  Baptisms
                 </Link>
               </li>
               <li>
@@ -162,7 +168,7 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
                   style={{ color: '#FFFFFF', fontFamily: "'Inter', sans-serif" }}
                   className="font-inter text-white hover:text-sky-400 transition-colors"
                 >
-                  Online Giving
+                  Donate
                 </Link>
               </li>
               <li>

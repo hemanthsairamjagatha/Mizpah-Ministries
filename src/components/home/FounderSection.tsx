@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import type { Founder } from '../../types/database.types';
+import type { Founder, SiteSettings } from '../../types/database.types';
 import { resolveImageUrl } from '../../lib/utils';
+import { siteSettingsService } from '../../services/siteSettingsService';
 import { Skeleton } from '../common/Skeleton';
 
 export interface FounderSectionProps {
@@ -9,6 +10,7 @@ export interface FounderSectionProps {
   isLoading?: boolean;
   qualification?: string;
   showActions?: boolean;
+  settings?: SiteSettings | null;
 }
 
 export const FounderSection: React.FC<FounderSectionProps> = ({
@@ -16,7 +18,22 @@ export const FounderSection: React.FC<FounderSectionProps> = ({
   isLoading,
   qualification: propQualification,
   showActions = true,
+  settings,
 }) => {
+  const [internalSettings, setInternalSettings] = useState<SiteSettings | null>(settings || null);
+
+  useEffect(() => {
+    if (settings) {
+      setInternalSettings(settings);
+    } else {
+      siteSettingsService
+        .getSiteSettings()
+        .then((s) => {
+          if (s) setInternalSettings(s);
+        })
+        .catch(() => {});
+    }
+  }, [settings]);
   if (isLoading) {
     return (
       <section
@@ -58,6 +75,20 @@ export const FounderSection: React.FC<FounderSectionProps> = ({
   const quoteContent =
     founder.vision ||
     'For every way that someone can be lost, we want to provide a practical way for them to be found in the very place that they have ended up.';
+
+  let socials: any = internalSettings?.social_links;
+  if (typeof socials === 'string') {
+    try {
+      socials = JSON.parse(socials);
+    } catch {
+      socials = {};
+    }
+  }
+
+  const rawYoutubeUrl = (socials?.youtube as string | undefined)?.trim();
+  const youtubeUrl = rawYoutubeUrl
+    ? (/^https?:\/\//i.test(rawYoutubeUrl) ? rawYoutubeUrl : `https://${rawYoutubeUrl}`)
+    : 'https://www.youtube.com/@mizpahministriesap1515';
 
   return (
     <section
@@ -163,10 +194,12 @@ export const FounderSection: React.FC<FounderSectionProps> = ({
                 </div>
                 <div className="mt-4 px-4 sm:mt-0 sm:px-0">
                   <a
-                    href="#contact"
-                    className="inline-flex items-center text-sm font-semibold text-[#00A3E0] hover:text-[#008fcc] hover:underline transition-colors"
+                    href={youtubeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-sm font-semibold text-[#00A3E0] hover:text-[#008fcc] hover:underline transition-colors cursor-pointer"
                   >
-                    Follow on Instagram
+                    Subscribe on YouTube
                   </a>
                 </div>
               </div>
