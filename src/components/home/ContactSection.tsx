@@ -161,14 +161,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ settings }) => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-0">
-                  {/* 1. What can we help you with?* (Textarea) */}
+                  {/* 1. Write* (Textarea) */}
                   <div>
                     <label
                       htmlFor="message"
                       style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', margin: '32px 0px 0px', color: '#000000' }}
                       className="block text-[14px] font-normal text-black"
                     >
-                      What can we help you with?<span className="text-rose-500">*</span>
+                      Write<span className="text-rose-500">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -315,11 +315,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ settings }) => {
                     type="button"
                     onClick={() => setSelectedCampusIndex(idx)}
                     style={{ fontFamily: "'Inter', sans-serif" }}
-                    className={`px-3 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                      selectedCampusIndex === idx
+                    className={`px-3 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer ${selectedCampusIndex === idx
                         ? 'bg-[#1980CC] text-white shadow-xs'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                    }`}
+                      }`}
                   >
                     {c.name}
                   </button>

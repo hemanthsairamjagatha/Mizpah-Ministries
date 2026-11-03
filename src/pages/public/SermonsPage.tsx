@@ -56,13 +56,6 @@ export const SermonsPage: React.FC = () => {
 
           {/* Hero Content */}
           <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-14 sm:py-20 space-y-3 sm:space-y-4 animate-in fade-in zoom-in-95 duration-500">
-            <span
-              style={{ color: '#38BDF8', fontFamily: "'Inter', sans-serif" }}
-              className="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] drop-shadow-sm"
-            >
-              New Life in Christ
-            </span>
-
             <h1
               style={{ fontFamily: "'Inter', sans-serif" }}
               className="font-inter text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white drop-shadow-md leading-tight"
@@ -75,13 +68,6 @@ export const SermonsPage: React.FC = () => {
               className="font-inter text-sm sm:text-base text-white/95 max-w-2xl mx-auto font-normal leading-relaxed drop-shadow-xs"
             >
               Celebrating new life in Christ through water baptism—a public declaration of faith, repentance, and spiritual transformation. Witness believers making their sacred step of obedience in Jesus Christ.
-            </p>
-
-            <p
-              style={{ fontFamily: "'Inter', sans-serif", color: '#BAE6FD' }}
-              className="font-inter text-xs sm:text-sm text-sky-200 max-w-xl mx-auto italic font-light drop-shadow-xs pt-1"
-            >
-              “Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!” — 2 Corinthians 5:17
             </p>
           </div>
         </section>

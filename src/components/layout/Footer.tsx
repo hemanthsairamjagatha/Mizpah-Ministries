@@ -35,6 +35,11 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
     ? (/^https?:\/\//i.test(rawMapUrl) ? rawMapUrl : `https://${rawMapUrl}`)
     : '#';
 
+  const rawYoutubeUrl = (socials?.youtube as string | undefined)?.trim();
+  const youtubeUrl = rawYoutubeUrl
+    ? (/^https?:\/\//i.test(rawYoutubeUrl) ? rawYoutubeUrl : `https://${rawYoutubeUrl}`)
+    : 'https://www.youtube.com/@mizpahministriesap1515';
+
   return (
     <footer className="bg-navy-950 text-slate-300 pt-16 pb-12 border-t border-navy-900">
       <div
@@ -59,53 +64,44 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
             >
               {description}
             </p>
-            {/* Social Links */}
-            <div className="flex items-center gap-3 pt-2">
-              {socials.facebook && (
-                <a
-                  href={socials.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-lg bg-navy-900 flex items-center justify-center text-slate-400 hover:text-white hover:bg-sky-500 transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="w-4 h-4" />
-                </a>
-              )}
-              {socials.instagram && (
-                <a
-                  href={socials.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-lg bg-navy-900 flex items-center justify-center text-slate-400 hover:text-white hover:bg-sky-500 transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="w-4 h-4" />
-                </a>
-              )}
-              {socials.youtube && (
-                <a
-                  href={/^https?:\/\//i.test(socials.youtube) ? socials.youtube : `https://${socials.youtube}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-lg bg-navy-900 flex items-center justify-center text-slate-400 hover:text-white hover:bg-sky-500 transition-colors"
-                  aria-label="YouTube"
-                >
-                  <Youtube className="w-4 h-4" />
-                </a>
-              )}
-              {socials.twitter && (
-                <a
-                  href={socials.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-lg bg-navy-900 flex items-center justify-center text-slate-400 hover:text-white hover:bg-sky-500 transition-colors"
-                  aria-label="Twitter / X"
-                >
-                  <Twitter className="w-4 h-4" />
-                </a>
-              )}
-            </div>
+            {/* Other Social Links if configured */}
+            {(socials.facebook || socials.instagram || socials.twitter) && (
+              <div className="flex items-center gap-3 pt-2">
+                {socials.facebook && (
+                  <a
+                    href={socials.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 rounded-lg bg-navy-900 flex items-center justify-center text-slate-400 hover:text-white hover:bg-sky-500 transition-colors"
+                    aria-label="Facebook"
+                  >
+                    <Facebook className="w-4 h-4" />
+                  </a>
+                )}
+                {socials.instagram && (
+                  <a
+                    href={socials.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 rounded-lg bg-navy-900 flex items-center justify-center text-slate-400 hover:text-white hover:bg-sky-500 transition-colors"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="w-4 h-4" />
+                  </a>
+                )}
+                {socials.twitter && (
+                  <a
+                    href={socials.twitter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 rounded-lg bg-navy-900 flex items-center justify-center text-slate-400 hover:text-white hover:bg-sky-500 transition-colors"
+                    aria-label="Twitter / X"
+                  >
+                    <Twitter className="w-4 h-4" />
+                  </a>
+                )}
+              </div>
+            )}
           </div>
 
           {/* Col 2: Quick Links */}
@@ -239,23 +235,36 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
           </div>
         </div>
 
-        {/* Privacy & Terms aligned above the line of the footer */}
-        <div className="pt-4 pb-3 flex items-center justify-start gap-5 text-xs text-white">
-          <Link
-            to="/privacy"
-            style={{ color: '#FFFFFF', fontFamily: "'Inter', sans-serif" }}
-            className="font-inter text-white hover:text-sky-300 hover:underline transition-colors"
+        {/* Privacy & Terms on left, YouTube symbol on right in the same line */}
+        <div className="pt-4 pb-3 flex items-center justify-between text-xs text-white">
+          <div className="flex items-center gap-5">
+            <Link
+              to="/privacy"
+              style={{ color: '#FFFFFF', fontFamily: "'Inter', sans-serif" }}
+              className="font-inter text-white hover:text-sky-300 hover:underline transition-colors"
+            >
+              Privacy
+            </Link>
+            <span className="text-slate-600 select-none">|</span>
+            <Link
+              to="/terms"
+              style={{ color: '#FFFFFF', fontFamily: "'Inter', sans-serif" }}
+              className="font-inter text-white hover:text-sky-300 hover:underline transition-colors"
+            >
+              Terms
+            </Link>
+          </div>
+
+          <a
+            href={youtubeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-navy-900 border border-navy-700/80 flex items-center justify-center text-white hover:bg-red-600 hover:border-red-600 transition-all shadow-sm shrink-0 group"
+            aria-label="YouTube"
+            title="Subscribe on YouTube"
           >
-            Privacy
-          </Link>
-          <span className="text-slate-600 select-none">|</span>
-          <Link
-            to="/terms"
-            style={{ color: '#FFFFFF', fontFamily: "'Inter', sans-serif" }}
-            className="font-inter text-white hover:text-sky-300 hover:underline transition-colors"
-          >
-            Terms
-          </Link>
+            <Youtube className="w-6 h-6 sm:w-7 sm:h-7 text-white group-hover:scale-105 transition-transform" />
+          </a>
         </div>
 
         {/* The line of the footer with copyright below */}

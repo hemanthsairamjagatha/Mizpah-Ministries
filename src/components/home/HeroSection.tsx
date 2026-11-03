@@ -77,7 +77,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ slides, isLoading }) =
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-[1276px] w-full mx-auto px-4 sm:px-6 lg:px-8 text-center text-white space-y-6 sm:space-y-8 animate-in fade-in zoom-in-95 duration-500">
+      <div className="relative z-10 max-w-[1276px] w-full mx-auto px-4 sm:px-6 lg:px-8 text-center text-white space-y-6 sm:space-y-8 -translate-y-8 sm:-translate-y-10 animate-in fade-in zoom-in-95 duration-500">
         <p
           style={{ color: '#FFFFFF', fontFamily: "'Inter', sans-serif" }}
           className="font-inter text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-white drop-shadow-sm"

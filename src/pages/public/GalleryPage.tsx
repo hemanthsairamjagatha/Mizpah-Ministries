@@ -50,7 +50,7 @@ export const GalleryPage: React.FC = () => {
           <div className="absolute inset-0 z-0">
             <img
               src="/images/gallery-hero.png"
-              alt="Church Photo Gallery & Celebrations"
+              alt="Ministry Photo Gallery & Celebrations"
               className="w-full h-full object-cover object-center"
               style={{
                 filter: 'contrast(1.05) brightness(0.88)',
@@ -66,7 +66,7 @@ export const GalleryPage: React.FC = () => {
               style={{ fontFamily: "'Inter', sans-serif" }}
               className="font-inter text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white drop-shadow-md leading-tight"
             >
-              Church Photo Gallery
+              Ministry Photo Gallery
             </h1>
 
             <p

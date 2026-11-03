@@ -92,11 +92,10 @@ const CollectionCard: React.FC<CollectionCardProps> = ({ col, index, onOpenLight
             src={resolveImageUrl(img.url)}
             alt={img.altText}
             loading="lazy"
-            className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out ${
-              idx === activeIdx
+            className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out ${idx === activeIdx
                 ? 'opacity-100 scale-100 z-10'
                 : 'opacity-0 scale-105 pointer-events-none z-0'
-            }`}
+              }`}
           />
         ))}
 
@@ -168,7 +167,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
   isLoading,
   showCategories = true,
   showViewAll = false,
-  title = 'Church Life in Pictures',
+  title = 'Ministry Pictures',
 }) => {
   const [selectedCategorySlug, setSelectedCategorySlug] = useState('all');
 
@@ -238,11 +237,10 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
             <button
               onClick={() => setSelectedCategorySlug('all')}
               style={{ fontFamily: "'Inter', sans-serif" }}
-              className={`font-inter px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
-                selectedCategorySlug === 'all'
+              className={`font-inter px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${selectedCategorySlug === 'all'
                   ? 'bg-sky-400 text-white shadow-sm font-semibold'
                   : 'bg-white text-navy-700 hover:bg-slate-100 border border-slate-200'
-              }`}
+                }`}
             >
               All Photos
             </button>
@@ -253,11 +251,10 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
                   key={cat.id}
                   onClick={() => setSelectedCategorySlug(cat.slug)}
                   style={{ fontFamily: "'Inter', sans-serif" }}
-                  className={`font-inter px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
-                    selectedCategorySlug === cat.slug
+                  className={`font-inter px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${selectedCategorySlug === cat.slug
                       ? 'bg-sky-400 text-white shadow-sm font-semibold'
                       : 'bg-white text-navy-700 hover:bg-slate-100 border border-slate-200'
-                  }`}
+                    }`}
                 >
                   {cat.name}
                 </button>
