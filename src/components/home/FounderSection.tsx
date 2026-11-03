@@ -70,7 +70,7 @@ export const FounderSection: React.FC<FounderSectionProps> = ({
       : ((founder as any)?.qualification || 'B.A, B.sc, LLB, LLM, B.Th');
 
   const firstName =
-    founder.name.replace(/^pastor\s+/i, '').trim().split(' ')[0] || 'Our Pastor';
+    founder.name.replace(/^pastor\s+/i, '').trim().split(' ')[0] || 'Pastor';
 
   const quoteContent =
     founder.vision ||
@@ -133,7 +133,7 @@ export const FounderSection: React.FC<FounderSectionProps> = ({
               }}
               className="font-semibold uppercase tracking-wider text-sm mb-4"
             >
-              OUR PASTOR
+              PASTOR
             </div>
 
             {/* Pastor Name Heading with Subtle Qualification */}
