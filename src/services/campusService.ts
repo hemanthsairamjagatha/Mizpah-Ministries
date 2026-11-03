@@ -17,7 +17,7 @@ const DEFAULT_MAP_URL =
 
 const DEFAULT_SANCTUARY_CAMPUS: Campus = {
   id: 'main-sanctuary',
-  name: 'Mizpah Ministries Headquarters',
+  name: '',
   address: `MIZPAH MINISTRIES 
 NO:1 KR COLONY,
 PODILI ROAD, KANIGIRI,
@@ -77,7 +77,7 @@ export const campusService = {
         const parsed = JSON.parse(cached);
         if (Array.isArray(parsed) && parsed.length > 0) return parsed;
       }
-    } catch (_) {}
+    } catch (_) { }
 
     return [DEFAULT_SANCTUARY_CAMPUS];
   },
@@ -120,7 +120,7 @@ export const campusService = {
         this.cacheLocal(all);
         return result;
       }
-    } catch (_) {}
+    } catch (_) { }
 
     // 2. Fallback to site_settings
     const current = await this.getAllCampuses();
@@ -157,7 +157,7 @@ export const campusService = {
         this.cacheLocal(all);
         return result;
       }
-    } catch (_) {}
+    } catch (_) { }
 
     // 2. Fallback to site_settings
     const current = await this.getAllCampuses();
@@ -200,7 +200,7 @@ export const campusService = {
         this.cacheLocal(all);
         return;
       }
-    } catch (_) {}
+    } catch (_) { }
 
     // 2. Fallback to site_settings
     const current = await this.getAllCampuses();
@@ -243,6 +243,6 @@ export const campusService = {
   cacheLocal(campuses: Campus[]): void {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(campuses));
-    } catch (_) {}
+    } catch (_) { }
   },
 };

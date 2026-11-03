@@ -436,7 +436,7 @@ export interface GalleryCollectionWithImages extends GalleryCollection {
 
 export interface Campus {
   id: string;
-  name: string;
+  name?: string;
   address: string;
   phone?: string | null;
   email?: string | null;
