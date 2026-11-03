@@ -23,7 +23,7 @@ Designed with an elegant, peaceful Christian church aesthetic featuring a **pure
   6. *Sanctuary*
   Features multiple photos per collection/album, responsive image grids, lazy loading, and an interactive **fullscreen lightbox** with previous/next navigation and keyboard controls (`ArrowLeft`, `ArrowRight`, `Escape`).
 - **G. Interactive Contact Form:** Validated inquiry form with full name, email, phone (optional), subject, and prayer request/message. Direct Supabase database persistence, spam protection, client-side rate limiting, duplicate submission prevention, and toast notifications.
-- **H. Footer:** Configurable logo, church name, sanctuary location, service times, contact numbers, email, social media links (Facebook, Instagram, YouTube, Twitter/X), and copyright notice.
+- **H. Footer:** Configurable logo, church name, Our Location, service times, contact numbers, email, social media links (Facebook, Instagram, YouTube, Twitter/X), and copyright notice.
 
 ---
 

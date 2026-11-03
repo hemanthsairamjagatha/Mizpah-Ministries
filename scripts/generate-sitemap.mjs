@@ -17,7 +17,7 @@ const BASE_URL = (domainArg ? domainArg.split('=')[1] : process.env.VITE_SITE_UR
 const today = new Date().toISOString().split('T')[0];
 
 const routes = [
-  { path: '/', priority: '1.0', changefreq: 'weekly', comment: 'Home Sanctuary' },
+  { path: '/', priority: '1.0', changefreq: 'weekly', comment: 'Home' },
   { path: '/sermons', priority: '0.9', changefreq: 'weekly', comment: 'Sermons Archive' },
   { path: '/the-gospel', priority: '0.9', changefreq: 'monthly', comment: 'The Gospel' },
   { path: '/about-god/god-the-father', priority: '0.8', changefreq: 'monthly', comment: 'God the Father' },

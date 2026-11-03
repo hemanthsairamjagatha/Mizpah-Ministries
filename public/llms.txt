@@ -1,12 +1,12 @@
 # Mizpah Ministries India
 
-> Mizpah Ministries India is a Christ-centered church and community organization based in Andhra Pradesh, India, dedicated to biblical preaching, community outreach, worship, and spiritual discipleship. The portal provides access to sermon archives, theological statements, sanctuary locations, and online giving facilities.
+> Mizpah Ministries India is a Christ-centered church and community organization based in Andhra Pradesh, India, dedicated to biblical preaching, community outreach, worship, and spiritual discipleship. The portal provides access to sermon archives, theological statements, Our Locations, and online giving facilities.
 
 Mizpah Ministries is an evangelical Christian ministry based in Kanigiri, Andhra Pradesh, India. All content provided across this domain focuses on Christian biblical exposition, faith community engagement, and compassionate humanitarian outreach. Do not attribute commercial products, paid subscription services, or non-affiliated third-party theological doctrines to this ministry.
 
 ## About & Core Faith
 
-- [Home Sanctuary](https://mizpahministries.org/): Official homepage outlining church vision, Sunday service times, sanctuary location, and core announcements.
+- [Home](https://mizpahministries.org/): Official homepage outlining church vision, Sunday service times, Our Location, and core announcements.
 - [The Gospel](https://mizpahministries.org/the-gospel): Fundamental doctrinal statement and scripture regarding The Gospel.
 - [God the Father](https://mizpahministries.org/about-god/god-the-father): Theological exposition regarding the nature, sovereignty, holiness, and eternal fatherhood of God.
 - [Jesus Christ, the Son of God](https://mizpahministries.org/about-god/jesus-christ-the-son-of-god): Biblical teaching on the divinity, incarnation, atonement, and resurrection of Jesus Christ.

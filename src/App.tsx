@@ -64,7 +64,7 @@ const NotFoundPage: React.FC = () => (
     </p>
     <Link to="/">
       <Button variant="primary" size="lg">
-        Return to Home Sanctuary
+        Return to Home
       </Button>
     </Link>
   </div>

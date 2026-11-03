@@ -119,7 +119,7 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
                   style={{ color: '#FFFFFF', fontFamily: "'Inter', sans-serif" }}
                   className="font-inter text-white hover:text-sky-400 transition-colors"
                 >
-                  Home Sanctuary
+                  Home
                 </Link>
               </li>
               <li>
@@ -194,7 +194,7 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
               style={{ fontFamily: "'Inter', sans-serif" }}
               className="font-inter text-white font-semibold text-base tracking-wide"
             >
-              Sanctuary Location
+              Our Location
             </h4>
             <ul className="space-y-3 text-sm text-white">
               {address && (
@@ -204,7 +204,7 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-start gap-3 text-white hover:text-sky-300 transition-colors group cursor-pointer"
-                    
+
                   >
                     <MapPin className="w-5 h-5 text-sky-400 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                     <span
